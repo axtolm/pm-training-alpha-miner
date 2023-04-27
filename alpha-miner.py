@@ -418,14 +418,14 @@ def alpha_miner(traces_list, qty_list, a_start = 'I', a_end = 'O'):
     # places
     P = pd.DataFrame({'candidate': max_candidates,
                       'place':['P\n'+''.join(s[0]) +'_'+ ''.join(s[1]) for s in max_candidates]
-                      }).sort_values(by='place').reset_index(drop=True)
+                      }).sort_values(by='place')
     # arcs
     F = set()
     for i in P.index:
         for A1 in P.iloc[i]['candidate'][0]: F = F | {(A1, P.iloc[i]['place'])}
         for A2 in P.iloc[i]['candidate'][1]: F = F | {(P.iloc[i]['place'], A2)}
     # add Start(I) and End(O) to places and arcs
-    P = pd.concat([pd.DataFrame({'candidate': [''],'place':['P\n'+a_start]}), P, pd.DataFrame({'candidate': [''],'place':['P\n'+a_end]})])        
+    P = pd.concat([pd.DataFrame({'candidate': [''],'place':['P\n'+a_start]}), P, pd.DataFrame({'candidate': [''],'place':['P\n'+a_end]})]).reset_index(drop=True)        
     F = list(F | {('P\n'+a_start,a_start)} | {(a_end,'P\n'+a_end)})
     return T, P, F, T_label_dict 
     
