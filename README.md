@@ -2,7 +2,7 @@
 This web app helps beginners in Process Mining understand the Process Discovery topic using the Alpha Algorithm. You can use one of the pre-installed simple event logs or create your own by modifying one. We specifically use the event log format found in Process Mining textbooks [1]: $L =[< a, c, d>^{45},< b, c, e >^{42}]$. The app includes one exercise that performs the Alpha Algorithm step by step and visualizes the discovered process model as a Petri net.     
 
 ### Usage   
-You can try the app on the Streamlit Cloud via the following [URL](https://axtolm-pm-training-alpha-miner-alpha-miner-u6jqwq.streamlit.app/).    
+You can try the app on the Streamlit Cloud via the following [URL](http://185.105.88.103:8591/).    
 Alternatively, you can download and deploy it on your computer as a Python application based on the Streamlit framework (see `requirements.txt` and `packages.txt` for details).     
 
 ### Features
